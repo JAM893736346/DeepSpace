@@ -11,12 +11,12 @@ public class EnemyManager : Singleton<EnemyManager>
     public float TimeBetweenWaves => timeBetweenSpawn;
     [SerializeField] GameObject[] enemyPrefab;
     [SerializeField] bool SpanEnemy = true;
-    [SerializeField] float timeBetweenSpawn = 1f;
+    [SerializeField] float timeBetweenSpawn = 2f;
 
     [SerializeField] ItemManager itemManager;
 
 
-    [SerializeField] float waitBetweenWaves = 1;
+    [SerializeField] float waitBetweenWaves = 3;
     WaitForSeconds waitTimeBetweenWaves;
     public List<GameObject> enemyList = new List<GameObject> { };
     public int waveNumInEnemy => waveNumber;
@@ -110,15 +110,19 @@ public class EnemyManager : Singleton<EnemyManager>
                 itemManager.InitDatamic(2);
                 enemyList.Add(PoolManager.Release(enemyPrefab[0], transform.position));
                 yield return waitForSeconds;
+                enemyList.Add(PoolManager.Release(enemyPrefab[0], transform.position));
+                yield return new WaitForSeconds(5);
                 enemyList.Add(PoolManager.Release(enemyPrefab[1], transform.position));
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(6);
                 enemyList.Add(PoolManager.Release(enemyPrefab[2], transform.position));
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(10f);
                 enemyList.Add(PoolManager.Release(enemyPrefab[3], transform.position));
-                yield return null;
+                yield return new WaitForSeconds(10f);
                 enemyList.Add(PoolManager.Release(enemyPrefab[4], transform.position));
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(14);
                 enemyList.Add(PoolManager.Release(enemyPrefab[5], transform.position));
+                yield return new WaitForSeconds(5);
+                enemyList.Add(PoolManager.Release(enemyPrefab[4], transform.position));
                 break;
             default:
 

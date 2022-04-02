@@ -53,7 +53,7 @@ public class PlayerEnergy : Singleton<PlayerEnergy>
     {
         while (available)
         {
-            Obtain(1);
+            Obtain(2);
             yield return waitForSecondsObtain;
         }
     }

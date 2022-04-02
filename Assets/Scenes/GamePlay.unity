@@ -2086,7 +2086,7 @@ MonoBehaviour:
   angleFire: 20
   NumFire: 3
   healthbar: {fileID: 1286163285}
-  healthRegenerateTime: 3
+  healthRegenerateTime: 1.5
   healthRegeneratePersent: 0.1
   regenrateHealth: 1
   items:

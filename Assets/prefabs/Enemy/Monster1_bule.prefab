@@ -280,10 +280,10 @@ GameObject:
   m_Component:
   - component: {fileID: 918020381562412570}
   - component: {fileID: 918020381562412569}
-  - component: {fileID: 918020381562412568}
   - component: {fileID: 918020381562412575}
   - component: {fileID: 918020381562412574}
   - component: {fileID: 918020381562412573}
+  - component: {fileID: 552553537779881868}
   m_Layer: 8
   m_Name: Monster1_bule
   m_TagString: Enemy
@@ -357,22 +357,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &918020381562412568
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918020381562412572}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 3.2499998
 --- !u!114 &918020381562412575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,6 +418,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 525469060e67ca5478ba34d831c19c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &552553537779881868
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918020381562412572}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8, y: 7.97}
+    newSize: {x: 8, y: 7.97}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8, y: 7.97}
+  m_EdgeRadius: 0
 --- !u!1 &918020381747204396
 GameObject:
   m_ObjectHideFlags: 0
