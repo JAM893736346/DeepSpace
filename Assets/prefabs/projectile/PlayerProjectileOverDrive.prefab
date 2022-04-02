@@ -5014,7 +5014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 20
-  Damage: 3
+  Damage: 15
   moveDirction: {x: 1, y: 0, z: 0}
   hitVFX: {fileID: 6080366703635681589, guid: 614b20988b04a44408e352728d52d7c5, type: 3}
   GidestanceSystem: {fileID: 1726909923432533981}

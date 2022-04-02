@@ -23,7 +23,7 @@ public class PauseMuneUIManager : MonoBehaviour
         //继续按钮返回游戏
         Continuebtn.onClick.AddListener(() => GameManager.onunPause.Invoke());
         //暂停按钮结算界面
-
+        Giveupbtn.onClick.AddListener(() => ScenesLoader.Instance.chooseMenuPlayScence());
     }
     private void OnDestroy()
     {

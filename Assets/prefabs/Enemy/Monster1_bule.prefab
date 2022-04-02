@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5488803460f8d62479494917e7006102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxhealth: 30
+  maxhealth: 60
   showOnHeadHealthBar: 1
   onHeadHealthBar: {fileID: 918020380313067846}
   VFXDie: {fileID: 4196846540131739826, guid: 1470d3103d864944da9218f427bf021e, type: 3}

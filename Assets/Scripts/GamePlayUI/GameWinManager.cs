@@ -11,6 +11,7 @@ public class GameWinManager : MonoBehaviour
     Canvas canvas;
     private void Awake()
     {
+        Time.timeScale = 1;
         canvas = GetComponent<Canvas>();
         canvas.enabled = false;
         winbtn.onClick.AddListener(() => ScenesLoader.Instance.chooseMenuPlayScence());
@@ -28,6 +29,7 @@ public class GameWinManager : MonoBehaviour
     private void OnDestroy()
     {
         GameWinevent -= Winevent;
+
     }
     void Winevent()
     {

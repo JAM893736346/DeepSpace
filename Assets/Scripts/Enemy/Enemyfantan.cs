@@ -106,7 +106,7 @@ public class Enemyfantan : Character
         if(other.gameObject.CompareTag("Playerprojectile"))
         {
             var projectile = other.gameObject.GetComponent<Projectile>();
-           int  damage = projectile.Damage * 3;
+           int  damage = projectile.Damage * 2;
             base.Damage(damage);
             other.gameObject.tag = "Enemyprojectile";
             projectile.MoveSpeed /= 2;

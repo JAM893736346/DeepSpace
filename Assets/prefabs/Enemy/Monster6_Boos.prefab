@@ -131,7 +131,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2502394628838950793}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88ea8bbea82931847b096906b94265c2, type: 3}
   m_Name: 
@@ -149,6 +149,7 @@ MonoBehaviour:
   sumonceFire: 5
   PaddingX: 2
   PaddingY: 2
+  targetPosition: {x: 0, y: 0}
   MoveSpeed: 6
   Isarrive: 0
 --- !u!114 &350737041
