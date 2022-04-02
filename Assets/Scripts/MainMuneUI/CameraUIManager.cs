@@ -13,6 +13,7 @@ public class CameraUIManager : MonoBehaviour
     float originSizi;
     private void Awake()
     {
+        Time.timeScale = 1;
         physics2D = GetComponent<Physics2DRaycaster>();
         camera = GetComponent<Camera>();
         originSizi = camera.orthographicSize;

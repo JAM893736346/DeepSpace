@@ -24,6 +24,7 @@ public class PauseMuneUIManager : MonoBehaviour
         Continuebtn.onClick.AddListener(() => GameManager.onunPause.Invoke());
         //暂停按钮结算界面
         Giveupbtn.onClick.AddListener(() => ScenesLoader.Instance.chooseMenuPlayScence());
+        Giveupbtn.onClick.AddListener(stateCanvesturn);
     }
     private void OnDestroy()
     {

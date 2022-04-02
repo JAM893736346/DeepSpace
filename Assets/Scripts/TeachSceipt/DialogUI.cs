@@ -83,7 +83,7 @@ public class DialogUI : MonoBehaviour
     public Image HeadPortrait;                   //头像
     public Text NameText;                       //名字文本
     public Text ConttentText;                   //内容文本
-    private bool _isExecute = false;             //是否执行命令：默认不执行
+    private bool _isExecute;             //是否执行命令：默认不执行
     [SerializeField] float sharketime;
     [SerializeField] float sharkeLength;
 
@@ -96,7 +96,7 @@ public class DialogUI : MonoBehaviour
         teachEnd.SetActive(false);
         AnalysisXml();
         StartGame();                                                             //调用解析XML方法
-        OneByOneExecuteCommand();
+        //OneByOneExecuteCommand();
     }
 
 
@@ -106,7 +106,7 @@ public class DialogUI : MonoBehaviour
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && _isExecute == true ||
-            Input.GetKeyDown(KeyCode.KeypadEnter) && _isExecute == true) //如果按下鼠标左键或者按下Enter
+            Input.GetKeyDown(KeyCode.Space) && _isExecute == true) //如果按下鼠标左键或者按下Enter
         {
             OneByOneExecuteCommand(); //执行对话命令函数
         }
@@ -191,7 +191,7 @@ public class DialogUI : MonoBehaviour
     private void AnalysisXml()
     {
         XmlDocument document = new XmlDocument();                 //实例化一个xml文档
-        document.Load(Application.dataPath + "/Data/Game.xml"); //加载 XML 内容
+        document.Load(Application.dataPath + "/Resources/Game.xml"); //加载 XML 内容
         XmlElement rootEle = document.LastChild as XmlElement;    //根节点
         foreach (XmlElement ele in rootEle.ChildNodes)            //遍历根节点的所有子节点
         {
@@ -223,7 +223,7 @@ public class DialogUI : MonoBehaviour
             {
                 sharke sharke = new sharke();
                 sharke.AllType = CommandType.sharke;
-                sharke.Time =  float.Parse(ele.InnerText);
+                sharke.Time = float.Parse(ele.InnerText);
                 Commands.Add(sharke);
             }
         }

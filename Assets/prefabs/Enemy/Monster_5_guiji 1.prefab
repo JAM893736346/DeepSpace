@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxhealth: 60
-  showOnHeadHealthBar: 0
+  showOnHeadHealthBar: 1
   onHeadHealthBar: {fileID: 7510725576072769346}
   VFXDie: {fileID: 4196846540131739826, guid: 7a0eaea3d09cc5b478bf21097ad50bdf, type: 3}
   NumFire: 6

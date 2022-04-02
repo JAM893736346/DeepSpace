@@ -150,8 +150,7 @@ public class PlayerController : Character
         unOverdrive -= unOverDrive;
         StopAllCoroutines();
         //玩家死亡游戏结束
-        GameManager.GameState = GameState.GameOver;
-        GameOverManager.Gameoverevent.Invoke();
+
     }
     public override void Damage(int value)
     {
@@ -178,6 +177,8 @@ public class PlayerController : Character
     {
         healthbar.UpdataStats(0, maxhealth);
         base.Die();
+        GameManager.GameState = GameState.GameOver;
+        GameOverManager.Gameoverevent.Invoke();
     }
     void Move()
     {

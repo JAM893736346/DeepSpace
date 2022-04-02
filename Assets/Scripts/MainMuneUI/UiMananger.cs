@@ -33,6 +33,7 @@ public class UiMananger : MonoBehaviour
         exitButton = button3.GetComponent<Button>();
         backButton = backobj.GetComponent<Button>();
         animator = GetComponent<Animator>();
+        exitButton.onClick.AddListener(() => Application.Quit());
     }
     private void OnEnable()
     {

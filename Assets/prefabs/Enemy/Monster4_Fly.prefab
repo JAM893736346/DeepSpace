@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxhealth: 40
-  showOnHeadHealthBar: 0
+  showOnHeadHealthBar: 1
   onHeadHealthBar: {fileID: 2971953245195584712}
   VFXDie: {fileID: 4196846540131739826, guid: f62e80dc3eac9c64ba0a3ebb598693c0, type: 3}
   score: 10
@@ -426,8 +426,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.05, y: 4.45}
-  m_SizeDelta: {x: 1.646, y: 1}
+  m_AnchoredPosition: {x: 0.51, y: 4.91}
+  m_SizeDelta: {x: 2.04, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &2971953245195584719
 Canvas:
