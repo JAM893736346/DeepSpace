@@ -31,6 +31,12 @@ public class Enemy3 : Character
         }
 
     }
+    public override void Die()
+    {
+        PlayerEnergy.Instance.Obtain(7);
+        base.Die();
+    }
+
     protected  void EnemyFire()
     {
         float angle = 360 / NumFire;

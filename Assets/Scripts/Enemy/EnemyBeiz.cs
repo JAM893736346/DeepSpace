@@ -96,16 +96,16 @@ public class EnemyBeiz : Character
     }
     IEnumerator Move()
     {
-         targetPosition = Viewport.Instance.RandomRightHalfPosition(PaddingX, PaddingY);
+        targetPosition = Viewport.Instance.RandomRightHalfPosition(PaddingX, PaddingY);
 
         while (gameObject.activeSelf)
         {
-           while  (Vector3.Distance(transform.position, targetPosition) >= Mathf.Epsilon)
+            while (Vector3.Distance(transform.position, targetPosition) >= Mathf.Epsilon)
             {
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.fixedDeltaTime);
-            } 
-             targetPosition = Viewport.Instance.RandomRightHalfPosition(PaddingX, PaddingX);
-            yield return new WaitForSeconds (5.0f);
+            }
+            targetPosition = Viewport.Instance.RandomRightHalfPosition(PaddingX, PaddingX);
+            yield return new WaitForSeconds(5.0f);
         }
     }
 
@@ -140,6 +140,8 @@ public class EnemyBeiz : Character
         ScoreManager.Instance.AddScore(score);
         EnemyManager.Instance.RemoveFeomList(gameObject);
         pointindex = EnemyController.returnPoint(pointindex);
+        PlayerEnergy.Instance.Obtain(10);
+
 
         //播放特效；音效（可有可无）
         base.Die();

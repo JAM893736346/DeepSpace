@@ -427,7 +427,7 @@ public class PlayerController : Character
     {
         while (true)
         {
-            if (Input.GetKeyDown(KeyCode.L) && PlayerEnergy.Instance.IsEnough(80))
+            if (Input.GetKeyDown(KeyCode.L) && PlayerEnergy.Instance.IsEnough(PlayerEnergy.MAX))
             {
                 //播放特效
                 AudioManager.Instance.PlayRandomSFX(OverDriveMic);

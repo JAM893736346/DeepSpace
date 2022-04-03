@@ -6,7 +6,7 @@ public class Enemy : Character
 {
     [SerializeField] int NumFire;
     [SerializeField] int angleFire;
-    [SerializeField]GameObject hitVFX;
+    [SerializeField] GameObject hitVFX;
     [SerializeField] int score;
     [SerializeField] float minTime = 1;
     [SerializeField] float maxTime = 1.5f;
@@ -14,6 +14,7 @@ public class Enemy : Character
     [SerializeField] Vector2 dirction;
     [SerializeField] float onceFiretimeinterrival = 0.5f;
     [SerializeField] int sumonceFire = 5;
+    [SerializeField] int deathEnergyBonus = 6;
     Collider2D collision2D;
     float time;
     Vector2 targetposition = Vector2.zero;
@@ -112,20 +113,21 @@ public class Enemy : Character
         ScoreManager.Instance.AddScore(score);
         EnemyManager.Instance.RemoveFeomList(gameObject);
         pointindex = EnemyController.returnPoint(pointindex);
+        PlayerEnergy.Instance.Obtain(deathEnergyBonus);
         //播放特效；音效（可有可无）
         base.Die();
     }
-     protected void OnCollisionEnter2D(Collision2D other)
+    protected void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Playerprojectile"))
+        if (other.gameObject.CompareTag("Playerprojectile"))
         {
             var projectile = other.gameObject.GetComponent<Projectile>();
-           int  damage = projectile.Damage * 2;
+            int damage = projectile.Damage * 2;
             base.Damage(damage);
             other.gameObject.tag = "Enemyprojectile";
             projectile.MoveSpeed /= 2;
             PoolManager.Release(hitVFX, other.GetContact(0).point, Quaternion.identity);
-            
+
             other.gameObject.SetActive(false);
         }
     }

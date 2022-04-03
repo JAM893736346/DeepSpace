@@ -7,8 +7,8 @@ public class EnemyProjectile : Projectile
     [SerializeField] float moverate = 0.6f;
     private void Awake()
     {
-        PlayerController.onOverdrive += onOverDriveProjectile;
-        PlayerController.unOverdrive += onOverDriveProjectile;
+        // PlayerController.onOverdrive += onOverDriveProjectile;
+        // PlayerController.unOverdrive += onOverDriveProjectile;
     }
 
     // Update is called once per frame
@@ -18,8 +18,8 @@ public class EnemyProjectile : Projectile
     }
     private void OnDestroy()
     {
-        PlayerController.onOverdrive -= onOverDriveProjectile;
-        PlayerController.unOverdrive -= onOverDriveProjectile;
+        // PlayerController.onOverdrive -= onOverDriveProjectile;
+        // PlayerController.unOverdrive -= onOverDriveProjectile;
     }
     protected override void OnCollisionEnter2D(Collision2D other)
     {

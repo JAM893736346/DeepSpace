@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyGuiji :Character 
-    {
-   [SerializeField] int NumFire;
-     [SerializeField]GameObject hitVFX;
+public class EnemyGuiji : Character
+{
+    [SerializeField] int NumFire;
+    [SerializeField] GameObject hitVFX;
     [SerializeField] int angleFire;
     [SerializeField] int score;
     [SerializeField] float minTime = 1;
@@ -69,7 +69,7 @@ public class EnemyGuiji :Character
         }
 
     }
-    
+
     IEnumerator movetargect()
     {
         while (Vector2.Distance(transform.position, targetposition) >= Mathf.Epsilon && gameObject.activeSelf)
@@ -93,19 +93,20 @@ public class EnemyGuiji :Character
         ScoreManager.Instance.AddScore(score);
         EnemyManager.Instance.RemoveFeomList(gameObject);
         pointindex = EnemyController.returnPoint(pointindex);
+        PlayerEnergy.Instance.Obtain(6);
 
         //播放特效；音效（可有可无）
         base.Die();
     }
- 
-    protected virtual  void EnemyFire()
+
+    protected virtual void EnemyFire()
     {
         int midnum = NumFire / 2;
-        for (int i = 0; i < NumFire; i++)  
+        for (int i = 0; i < NumFire; i++)
         {
 
-            GameObject  bullet = PoolManager.Release(EnemyProject , transform.position);
-            EnemyProjectile2  Script = bullet.GetComponent<EnemyProjectile2 >();
+            GameObject bullet = PoolManager.Release(EnemyProject, transform.position);
+            EnemyProjectile2 Script = bullet.GetComponent<EnemyProjectile2>();
             if (NumFire % 2 == 1)
             {
                 //奇数
@@ -119,17 +120,17 @@ public class EnemyGuiji :Character
             }
         }
     }
-      protected void OnCollisionEnter2D(Collision2D other)
+    protected void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Playerprojectile"))
+        if (other.gameObject.CompareTag("Playerprojectile"))
         {
             var projectile = other.gameObject.GetComponent<Projectile>();
-           int  damage = projectile.Damage * 3;
+            int damage = projectile.Damage * 3;
             base.Damage(damage);
             other.gameObject.tag = "Enemyprojectile";
             projectile.MoveSpeed /= 2;
             PoolManager.Release(hitVFX, other.GetContact(0).point, Quaternion.identity);
-            
+
             other.gameObject.SetActive(false);
         }
     }

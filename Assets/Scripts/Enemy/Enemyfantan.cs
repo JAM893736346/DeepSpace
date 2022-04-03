@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemyfantan : Character 
+public class Enemyfantan : Character
 {
-  
-      [SerializeField] int score;
-        [SerializeField]GameObject hitVFX;
+
+    [SerializeField] int score;
+    [SerializeField] GameObject hitVFX;
     [SerializeField] float minTime = 1;
     [SerializeField] float maxTime = 1.5f;
     [SerializeField] GameObject EnemyProject;
@@ -70,8 +70,8 @@ public class Enemyfantan : Character
     }
     void EnemyFire()
     {
-         PoolManager.Release(EnemyProject,transform .position,Quaternion .Euler(0,0,60));
-        PoolManager.Release(EnemyProject, transform .position, Quaternion.Euler(0, 0, -60));
+        PoolManager.Release(EnemyProject, transform.position, Quaternion.Euler(0, 0, 60));
+        PoolManager.Release(EnemyProject, transform.position, Quaternion.Euler(0, 0, -60));
 
     }
     IEnumerator movetargect()
@@ -97,25 +97,26 @@ public class Enemyfantan : Character
         ScoreManager.Instance.AddScore(score);
         EnemyManager.Instance.RemoveFeomList(gameObject);
         pointindex = EnemyController.returnPoint(pointindex);
+        PlayerEnergy.Instance.Obtain(6);
 
         //播放特效；音效（可有可无）
         base.Die();
     }
-      protected void OnCollisionEnter2D(Collision2D other)
+    protected void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Playerprojectile"))
+        if (other.gameObject.CompareTag("Playerprojectile"))
         {
             var projectile = other.gameObject.GetComponent<Projectile>();
-           int  damage = projectile.Damage * 2;
+            int damage = projectile.Damage * 2;
             base.Damage(damage);
             other.gameObject.tag = "Enemyprojectile";
             projectile.MoveSpeed /= 2;
             PoolManager.Release(hitVFX, other.GetContact(0).point, Quaternion.identity);
-            
+
             other.gameObject.SetActive(false);
         }
     }
- }
- // Start is called before the first frame update
- 
+}
+// Start is called before the first frame update
+
 

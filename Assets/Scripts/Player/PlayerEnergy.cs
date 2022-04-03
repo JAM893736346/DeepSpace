@@ -51,9 +51,12 @@ public class PlayerEnergy : Singleton<PlayerEnergy>
     //自动获得能量
     IEnumerator AutoObtain()
     {
-        while (available)
+        while (true)
         {
-            Obtain(2);
+            if (available)
+            {
+                Obtain(2);
+            }
             yield return waitForSecondsObtain;
         }
     }
@@ -68,10 +71,7 @@ public class PlayerEnergy : Singleton<PlayerEnergy>
         if (energy == 0 && !available)
         {
             //关闭能量事件
-            if (energy == 0 && !available)
-            {
-                PlayerController.unOverdrive.Invoke();
-            }
+            PlayerController.unOverdrive.Invoke();
         }
     }
     /// <summary>
