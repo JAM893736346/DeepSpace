@@ -850,6 +850,7 @@ MonoBehaviour:
   ConttentText: {fileID: 3202370409117836675}
   sharketime: 1
   sharkeLength: 1
+  sum: 1
 --- !u!114 &782696382
 MonoBehaviour:
   m_ObjectHideFlags: 0

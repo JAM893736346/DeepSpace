@@ -15,18 +15,16 @@ public class PoolManager : MonoBehaviour
     void Awake()
     {
         dictionary = new Dictionary<GameObject, Pool>();
-
         Initialize(enemyPools);
         Initialize(playerProjectilePools);
         Initialize(enemyProjectilePools);
         Initialize(vFXPools);
         Initialize(lootItemPools);
     }
-    private void OnEnable()
-    {
+    private void OnEnable() {
         PlayerController.onOverdrive += ClearEnemyProjectilePool;
     }
-
+   
 #if UNITY_EDITOR
     void OnDestroy()
     {
@@ -35,8 +33,10 @@ public class PoolManager : MonoBehaviour
         CheckPoolSize(enemyProjectilePools);
         CheckPoolSize(vFXPools);
         CheckPoolSize(lootItemPools);
-        PlayerController.onOverdrive -= ClearEnemyProjectilePool;
 
+    }
+    private void OnDisable() {
+        PlayerController.onOverdrive -= ClearEnemyProjectilePool;
     }
 #endif
 

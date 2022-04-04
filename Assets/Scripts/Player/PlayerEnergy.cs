@@ -34,7 +34,7 @@ public class PlayerEnergy : Singleton<PlayerEnergy>
     {
         StartCoroutine(nameof(AutoObtain));
     }
-    private void OnDestroy()
+    private void OnDisable()
     {
         PlayerController.onOverdrive -= PlayerOverdriveon;
         PlayerController.unOverdrive -= PlayerOverdriveoff;

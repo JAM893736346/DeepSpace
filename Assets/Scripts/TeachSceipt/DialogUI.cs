@@ -87,6 +87,7 @@ public class DialogUI : MonoBehaviour
     [SerializeField] float sharketime;
     [SerializeField] float sharkeLength;
 
+    [SerializeField] int sum;
     /// <summary>
     /// 初始化方法
     /// </summary>
@@ -185,13 +186,21 @@ public class DialogUI : MonoBehaviour
     }
 
 
+
     /// <summary>
     /// 解析XML
     /// </summary>
     private void AnalysisXml()
     {
         XmlDocument document = new XmlDocument();                 //实例化一个xml文档
-        document.Load(Application.dataPath + "/Resources/Game.xml"); //加载 XML 内容
+        if (sum == 1)
+        {
+            document.Load(Application.dataPath + "/Resources/Game.xml"); //加载 XML 内容
+        }
+        else
+        {
+            document.Load(Application.dataPath + "/Resources/GameEnd.xml"); //加载 XML 内容
+        }
         XmlElement rootEle = document.LastChild as XmlElement;    //根节点
         foreach (XmlElement ele in rootEle.ChildNodes)            //遍历根节点的所有子节点
         {

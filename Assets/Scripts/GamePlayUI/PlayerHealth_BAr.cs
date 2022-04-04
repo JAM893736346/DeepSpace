@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth_BAr : dynamichealth
 {
-    [SerializeField] Text PersentText;
+    [SerializeField] protected Text PersentText;
     protected virtual void SetPercentText()
     {
         PersentText.text = "Blood:"+Mathf.RoundToInt(targetFillAmount * 100f) + "%";
