@@ -25,7 +25,6 @@ public class GameOverManager : MonoBehaviour
     }
     private void OnDestroy() {
         Gameoverevent -= GameOverEvent;
-        
     }
     private void Update()
     {
@@ -33,7 +32,7 @@ public class GameOverManager : MonoBehaviour
     }
     void GameOverEvent()
     {
-        Time.timeScale = 0;
+         Time.timeScale = 0;
         canvas.enabled = true;
     }
     public void Canvasdisable()

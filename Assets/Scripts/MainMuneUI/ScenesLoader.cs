@@ -14,6 +14,7 @@ public class ScenesLoader : Singleton<ScenesLoader>
     const string Teachplay = "teachPlay";
     const string Gameplay = "GamePlay";
     const string chooseMenuplay = "chooseMenu";
+    const string Endgamescense = "GameEnd";
     void Load(string scence)
     {
         SceneManager.LoadScene(scence);
@@ -60,12 +61,16 @@ public class ScenesLoader : Singleton<ScenesLoader>
     {
         StartCoroutine(LoadCoroutine(Teachplay));
     }
-     public void LoadGamePlayScence()
+    public void LoadGamePlayScence()
     {
         StartCoroutine(LoadCoroutine(Gameplay));
     }
-      public void chooseMenuPlayScence()
+    public void chooseMenuPlayScence()
     {
         StartCoroutine(LoadCoroutine(chooseMenuplay));
+    }
+    public void EndPlayScence()
+    {
+        StartCoroutine(LoadCoroutine(Endgamescense));
     }
 }

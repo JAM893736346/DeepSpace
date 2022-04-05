@@ -6,7 +6,7 @@ public class ScoreManager : Singleton<ScoreManager>
 {
     #region SCORE DISPLAY
 
-    public int Score => score;
+    public int Score => currentScore;
     public int Combo => combo;
     public float a;
     int score;

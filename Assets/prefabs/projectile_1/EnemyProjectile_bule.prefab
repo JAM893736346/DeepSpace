@@ -9718,7 +9718,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 6
-  Damage: 5
+  Damage: 6
   moveDirction: {x: 0, y: 0, z: 0}
   hitVFX: {fileID: 2142269656740448449, guid: 7636b48bd921ff1418d17f0f1da66020, type: 3}
   moverate: 0.6

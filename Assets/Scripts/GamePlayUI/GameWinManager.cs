@@ -14,7 +14,7 @@ public class GameWinManager : MonoBehaviour
         Time.timeScale = 1;
         canvas = GetComponent<Canvas>();
         canvas.enabled = false;
-        winbtn.onClick.AddListener(() => ScenesLoader.Instance.chooseMenuPlayScence());
+        winbtn.onClick.AddListener(() => ScenesLoader.Instance.EndPlayScence());
         winbtn.onClick.AddListener(Canvasdisable);
         winbtn.onClick.AddListener(Canvasdisable);
     }
@@ -34,7 +34,7 @@ public class GameWinManager : MonoBehaviour
     void Winevent()
     {
         Time.timeScale = 0;
-        scoretext.text = "Score:" + ScoreManager.Instance.Score.ToString();
+        scoretext.text =ScoreManager.Instance.Score.ToString();
         canvas.enabled = true;
     }
     public void Canvasdisable()

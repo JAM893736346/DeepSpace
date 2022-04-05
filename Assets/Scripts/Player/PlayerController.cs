@@ -138,6 +138,7 @@ public class PlayerController : Character
         }
         onOverdrive += OnOverDrive;
         unOverdrive += unOverDrive;
+        GameOverManager.Gameoverevent += PlayDieAnimation;
     }
     private void OnDisable()
     {
@@ -148,6 +149,7 @@ public class PlayerController : Character
         }
         onOverdrive -= OnOverDrive;
         unOverdrive -= unOverDrive;
+        GameOverManager.Gameoverevent -= PlayDieAnimation;
         StopAllCoroutines();
         //玩家死亡游戏结束
 
@@ -495,6 +497,11 @@ public class PlayerController : Character
             }
 
         }
+    }
+    void PlayDieAnimation()
+    {
+        animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+        animator.Play("idleTired");
     }
     public enum AttackStyle
     {
